@@ -4,19 +4,41 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css"></link>
     <title>Alliance</title>
 </head>
 <body>
-    <form>
-        <input type="text" placeholder="First Name">
-        <input type="text" placeholder="Last Name">
-        <input type="text" placeholder="Address">
-        <input type="date" placeholder="Date of Birth">
-        <select id="gender" name="gender">
-            <option value="male">Male</option>
-            <option value="female">Female</option>
-        </select>
-        <input type="text" placeholder="Notes">
+    <form id="form" action="/">
+        <div>
+            <input id="firstName" type="text" placeholder="First Name">
+            <span id="error_firstName">First Name is required!</span>
+            <span id="regex_firstName">Digits and special characters are not allowed!</span>
+        </div>
+        <div>
+            <input id="lastName" type="text" placeholder="Last Name">
+            <span id="error_lastName">Last Name is required!</span>
+            <span id="regex_lastName">Digits and special characters are not allowed!</span>
+        </div>
+        <div>
+            <input id="address" type="text" placeholder="Address">
+            <span id="error_address">Address is required!</span>
+            <span id="regex_address">Maximum 35 characters allowed!</span>
+        </div>
+        <div>
+            <input id="date" type="date" placeholder="Date of Birth">
+        </div>
+        <div>
+            <select id="gender" name="gender">
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+            </select>
+        </div>
+        <div>
+            <input id="notes" type="text" placeholder="Notes">
+        </div>
+        <div>
+            <button type="submit" value="submit">Submit</button>
+        </div>
     </form>
 <script src="index.js"></script>
 </body>
