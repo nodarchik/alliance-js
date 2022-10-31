@@ -13,6 +13,7 @@ const error_address = document.getElementById("error_address");
 const regex_address = document.getElementById("regex_address");
 const textOnly = /^[a-zA-Z]+$/;
 
+
 form.addEventListener('submit', (e) => {
     e.preventDefault();
 
@@ -51,4 +52,37 @@ form.addEventListener('submit', (e) => {
         address.style.background= "rgba(255, 0, 50, 0.3)";
         address.style.color= "rgba(255, 0, 50, 1)";
     }   
+        // get input values
+    let firstName_value = firstName.value;
+    let lastName_value = lastName.value;
+    let address_value = address.value;
+    let date_value = date.value;
+    let gender_value = gender.value;
+    let notes_value = notes.value;
+      
+      // get the html table
+      // 0 = the first table
+    var table = document.getElementsByTagName('table')[0];
+      
+      // add new empty row to the table
+      // 0 = in the top 
+      // table.rows.length = the end
+      // table.rows.length/2+1 = the center
+    var newRow = table.insertRow(table.rows.length/2+1);
+      
+      // add cells to the row
+    let cell1 = newRow.insertCell(0);
+    let cell2 = newRow.insertCell(1);
+    let cell3 = newRow.insertCell(2);
+    let cell4 = newRow.insertCell(3);
+    let cell5 = newRow.insertCell(4);
+    let cell6 = newRow.insertCell(5);
+      
+      // add values to the cells
+    cell1.innerHTML = firstName_value;
+    cell2.innerHTML = lastName_value;
+    cell3.innerHTML = address_value;
+    cell4.innerHTML = date_value;
+    cell5.innerHTML = gender_value;
+    cell6.innerHTML = notes_value;
 });

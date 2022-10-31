@@ -16,3 +16,12 @@
 #regex_address{
     visibility: hidden;
 }
+#table{
+    border-collapse: collapse;
+    width: 50%;
+    margin: 50px auto;
+}
+table, th, td{
+    border: 2px solid black;
+    padding:5px;
+}

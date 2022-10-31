@@ -8,7 +8,7 @@
     <title>Alliance</title>
 </head>
 <body>
-    <form id="form" action="/">
+    <form id="form">
         <div>
             <input id="firstName" type="text" placeholder="First Name">
             <span id="error_firstName">First Name is required!</span>
@@ -37,9 +37,19 @@
             <input id="notes" type="text" placeholder="Notes">
         </div>
         <div>
-            <button type="submit" value="submit">Submit</button>
+            <button type="submit">Submit</button>
         </div>
     </form>
+    <table id="table">
+        <tr>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Address</th>
+            <th>Date</th>
+            <th>Gender</th>
+            <th>notes</th>
+        </tr>
+    </table>
 <script src="index.js"></script>
 </body>
 </html>
