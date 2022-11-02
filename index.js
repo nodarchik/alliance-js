@@ -1,136 +1,86 @@
-const form = document.getElementById("form");
-const firstName = document.getElementById("firstName");
-const lastName = document.getElementById("lastName");
-const address = document.getElementById("address");
-const date = document.getElementById("date");
-const gender = document.getElementById("gender");
-const notes = document.getElementById("notes");
-const error_firstName = document.getElementById("error_firstName");
-const regex_firstName = document.getElementById("regex_firstName");
-const error_lastName = document.getElementById("error_lastName");
-const regex_lastName = document.getElementById("regex_lastName");
-const error_address = document.getElementById("error_address");
-const regex_address = document.getElementById("regex_address");
+let form = document.getElementById("form");
+let fName = document.getElementById("firstName");
+let lName = document.getElementById("lastName"); 
+let address = document.getElementById("address"); 
+let date = document.getElementById("date"); 
+let gender = document.getElementById("gender"); 
+let textarea = document.getElementById("notes"); 
+let error_fName = document.getElementById("error_firstName");
+let error_lName = document.getElementById("error_lastName");
+let error_address = document.getElementById("error_address");
+let table = document.getElementById("table");
 const textOnly = /^[a-zA-Z]+$/;
 
-
-form.addEventListener('submit', (e) => {
-    e.preventDefault();
-
-    // Validation for First Name  
-    if (firstName.value === null || firstName.value === ''){
-        error_firstName.style.visibility="visible";
-        firstName.style.background= "rgba(255, 0, 50, 0.3)";
-        firstName.style.color= "rgba(255, 0, 50, 1)";
-    }
-    if (!firstName.value.match(textOnly)){
-        regex_firstName.style.visibility="visible";
-        firstName.style.background= "rgba(255, 0, 50, 0.3)";
-        firstName.style.color= "rgba(255, 0, 50, 1)";
-    } 
-
-    // Validation for Last Name 
-    if (lastName.value === null || lastName.value === ''){
-        error_lastName.style.visibility="visible";
-        lastName.style.background= "rgba(255, 0, 50, 0.3)";
-        lastName.style.color= "rgba(255, 0, 50, 1)";
-    }
-    if (!lastName.value.match(textOnly)){
-        regex_lastName.style.visibility="visible";
-        lastName.style.background= "rgba(255, 0, 50, 0.3)";
-        lastName.style.color= "rgba(255, 0, 50, 1)";
-    } 
-
-    // Validation for Address
-      if (address.value === null || address.value === ''){
-        error_address.style.visibility="visible";
-        address.style.background= "rgba(255, 0, 50, 0.3)";
-        address.style.color= "rgba(255, 0, 50, 1)";
-    }
-    if (address.value.length > 35){
-        regex_address.style.visibility="visible";
-        address.style.background= "rgba(255, 0, 50, 0.3)";
-        address.style.color= "rgba(255, 0, 50, 1)";
-    }   
-
-// This section show data in tables.
-
-    // get input values
-    let firstName_value = firstName.value;
-    let lastName_value = lastName.value;
-    let address_value = address.value;
-    let date_value = date.value;
-    let gender_value = gender.value;
-    let notes_value = notes.value;
-      
-    // get the html table
-    // 0 = the first table
-    var table = document.getElementsByTagName('table')[0];
-      
-    // add new empty row to the table
-    // 0 = in the top 
-    // table.rows.length = the end
-    // table.rows.length/2+1 = the center
-    var newRow = table.insertRow(table.rows.length/2+1);
-      
-    // add cells to the row
-    let cell1 = newRow.insertCell(0);
-    let cell2 = newRow.insertCell(1);
-    let cell3 = newRow.insertCell(2);
-    let cell4 = newRow.insertCell(3);
-    let cell5 = newRow.insertCell(4);
-    let cell6 = newRow.insertCell(5);
-      
-    // add values to the cells
-    cell1.innerHTML = firstName_value;
-    cell2.innerHTML = lastName_value;
-    cell3.innerHTML = address_value;
-    cell4.innerHTML = date_value;
-    cell5.innerHTML = gender_value;
-    cell6.innerHTML = notes_value;
-
-    //Edit the data
-    function onEdit(td) {
-       selectedRow = td.parentElement.parentElement;
-       document.getElementById("productCode").value = selectedRow.cells[0].innerHTML;
-       document.getElementById("product").value = selectedRow.cells[1].innerHTML;
-       document.getElementById("qty").value = selectedRow.cells[2].innerHTML;
-       document.getElementById("perPrice").value = selectedRow.cells[3].innerHTML;
-    }
-    function updateRecord(formData) {
-       selectedRow.cells[0].innerHTML = formData.productCode;
-       selectedRow.cells[1].innerHTML = formData.product;
-       selectedRow.cells[2].innerHTML = formData.qty;
-       selectedRow.cells[3].innerHTML = formData.perPrice;
-    }
-
-     //Delete the data
-    function onDelete(td) {
-      if (confirm('Do you want to delete this record?')) {
-        row = td.parentElement.parentElement;
-        document.getElementById('storeList').deleteRow(row.rowIndex);
-        resetForm();
-      }
-    }
-
-
-    
-
-// // This section saves data in local storage.
-
-//     // Set values
-//     localStorage.setItem("firstName_value", firstName_value);
-//     localStorage.setItem("lastName_value", lastName_value);
-//     localStorage.setItem("address_value", address_value);
-//     localStorage.setItem("date_value", date_value);
-//     localStorage.setItem("gender_value", gender_value);
-//     localStorage.setItem("notes_value", notes_value);
-
-//     // Get values
-//     localStorage.getItem("firstName_value", firstName_value);
-//     localStorage.getItem("lastName_value", lastName_value);
-//     localStorage.getItem("address_value", address_value);
-//     localStorage.getItem("date_value", date_value);
-//     localStorage.getItem("gender_value", gender_value);
-//     localStorage.getItem("notes_value", notes_value);
+form.addEventListener("submit", (e) => {
+  e.preventDefault();
+  formValidation();
 });
+
+let formValidation = () =>{
+  if(fName.value === "" || fName.value === null || !fName.value.match(textOnly)){
+    error_fName.innerHTML = "First Name is required,Digits and special characters are not allowed!";
+  }else if(lName.value === "" || lName.value === null || !lName.value.match(textOnly)){
+    error_lName.innerHTML = "Last Name is required,Digits and special characters are not allowed!";
+  }else if(address.value === "" || address.value === null){
+    error_address.innerHTML = "Address must be less than 35 characters!";
+  }
+  else{
+    error_fName.innerHTML = "";
+    error_lName.innerHTML = "";
+    error_address.innerHTML = "";
+    acceptData();
+  }
+};
+
+let data = [{}];
+
+let acceptData = () => {
+  data.push({
+    fName: fName.value,
+    lName: lName.value,
+    address: address.value,
+    date: date.value,
+    gender: gender.value,
+    textarea: textarea.value,
+  });
+  localStorage.setItem("data", JSON.stringify(data));
+  createPost();
+};
+
+let createPost = () => {
+  table.innerHTML = "";
+  data.map((x,y) =>{
+    return (table.innerHTML += `
+    <div id=${y}>
+      <span>${x.fName}</span>
+      <span>${x.lName}</span>
+      <span>${x.address}</span>
+      <span>${x.date}</span>
+      <span>${x.gender}</span>
+      <span>${x.textarea}</span>
+      <button onClick="deletePost(this);createPost()">DLT</button>
+    </div>
+  `);
+  });
+  resetForm();
+};
+
+let resetForm = () => {
+  fName.value = "";
+  lName.value = "";
+  address.value = "";
+  date.value = "";
+  gender.value = "";
+  textarea.value = "";
+};
+
+let deletePost = (e) => {
+  e.parentElement.remove();
+  data.splice(e.parentElement.id, 1);
+  localStorage.setItem("data", JSON.stringify(data));
+};
+
+(()=>{
+  data = JSON.parse(localStorage.getItem("data"));
+  createPost();
+})();

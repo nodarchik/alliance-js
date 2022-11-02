@@ -11,18 +11,15 @@
     <form id="form">
         <div>
             <input id="firstName" type="text" placeholder="First Name">
-            <span id="error_firstName">First Name is required!</span>
-            <span id="regex_firstName">Digits and special characters are not allowed!</span>
+            <span id="error_firstName"></span>
         </div>
         <div>
             <input id="lastName" type="text" placeholder="Last Name">
-            <span id="error_lastName">Last Name is required!</span>
-            <span id="regex_lastName">Digits and special characters are not allowed!</span>
+            <span id="error_lastName"></span>
         </div>
         <div>
             <input id="address" type="text" placeholder="Address">
-            <span id="error_address">Address is required!</span>
-            <span id="regex_address">Maximum 35 characters allowed!</span>
+            <span id="error_address"></span>
         </div>
         <div>
             <input id="date" type="date" placeholder="Date of Birth">
@@ -34,21 +31,22 @@
             </select>
         </div>
         <div>
-            <input id="notes" type="text" placeholder="Notes">
+            <textarea name="" id="notes" cols="30" rows="10" placeholder="Notes"></textarea>
         </div>
         <div>
             <button type="submit">Submit</button>
         </div>
     </form>
     <table id="table">
-        <tr>
-            <th>First Name</th>
-            <th>Last Name</th>
-            <th>Address</th>
-            <th>Date</th>
-            <th>Gender</th>
-            <th>notes</th>
-        </tr>
+        <div>
+            <span>First Name</span>
+            <span>Last Name</span>
+            <span>Address</span>
+            <span>Date</span>
+            <span>Gender</span>
+            <span>notes</span> 
+            <span>delete</span> 
+        </div>
     </table>
 <script src="index.js"></script>
 </body>
