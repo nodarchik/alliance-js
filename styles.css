@@ -1,9 +1,6 @@
-#table{
-    border-collapse: collapse;
-    width: 50%;
-    margin: 50px auto;
+html{
+    height: 100%;
 }
-table, th, td{
-    border: 2px solid black;
-    padding:5px;
+body{
+    background:linear-gradient(135deg,#f97794 10%, #623AA2 100%);
 }

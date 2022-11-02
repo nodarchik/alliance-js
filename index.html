@@ -5,48 +5,52 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css"></link>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
     <title>Alliance</title>
 </head>
 <body>
-    <form id="form">
+    <form id="form" class="container p-5 w-50 mx-auto">
         <div>
-            <input id="firstName" type="text" placeholder="First Name">
+            <input class="form-control" id="firstName" type="text" placeholder="First Name">
             <span id="error_firstName"></span>
         </div>
         <div>
-            <input id="lastName" type="text" placeholder="Last Name">
+            <input class="form-control" id="lastName" type="text" placeholder="Last Name">
             <span id="error_lastName"></span>
         </div>
         <div>
-            <input id="address" type="text" placeholder="Address">
+            <input class="form-control" id="address" type="text" placeholder="Address">
             <span id="error_address"></span>
         </div>
         <div>
-            <input id="date" type="date" placeholder="Date of Birth">
+            <input class="form-control" id="date" type="date" placeholder="Date of Birth">
         </div>
         <div>
-            <select id="gender" name="gender">
+            <select class="form-control" id="gender" name="gender">
                 <option value="male">Male</option>
                 <option value="female">Female</option>
             </select>
         </div>
         <div>
-            <textarea name="" id="notes" cols="30" rows="10" placeholder="Notes"></textarea>
+            <textarea class="form-control" name="" id="notes" cols="30" rows="10" placeholder="Notes"></textarea>
         </div>
         <div>
-            <button type="submit">Submit</button>
+            <button class="btn btn-primary" type="submit">Submit</button>
         </div>
     </form>
-    <table id="table">
-        <div>
-            <span>First Name</span>
-            <span>Last Name</span>
-            <span>Address</span>
-            <span>Date</span>
-            <span>Gender</span>
-            <span>notes</span> 
-            <span>delete</span> 
-        </div>
+    <table id="table" class="table w-50 mx-auto">
+        <thead>
+            <tr>
+            <th scope="col">#</th>
+            <th scope="col">First Name</th>
+            <th scope="col">Last Name</th>
+            <th scope="col">Address</th>
+            <th scope="col">Date</th>
+            <th scope="col">Gender</th>
+            <th scope="col">notes</th> 
+            <th scope="col">delete</th>
+            </tr> 
+        </thead>
     </table>
 <script src="index.js"></script>
 </body>
