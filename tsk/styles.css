@@ -1,0 +1,27 @@
+/* #error_firstName{
+    visibility: hidden;
+}
+#regex_firstName{
+    visibility: hidden;
+}
+#error_lastName{
+    visibility: hidden;
+}
+#regex_lastName{
+    visibility: hidden;
+}
+#error_address{
+    visibility: hidden;
+}
+#regex_address{
+    visibility: hidden;
+} */
+#table{
+    border-collapse: collapse;
+    width: 50%;
+    margin: 50px auto;
+}
+table, th, td{
+    border: 2px solid black;
+    padding:5px;
+}

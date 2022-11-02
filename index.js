@@ -52,7 +52,10 @@ form.addEventListener('submit', (e) => {
         address.style.background= "rgba(255, 0, 50, 0.3)";
         address.style.color= "rgba(255, 0, 50, 1)";
     }   
-        // get input values
+
+// This section show data in tables.
+
+    // get input values
     let firstName_value = firstName.value;
     let lastName_value = lastName.value;
     let address_value = address.value;
@@ -60,17 +63,17 @@ form.addEventListener('submit', (e) => {
     let gender_value = gender.value;
     let notes_value = notes.value;
       
-      // get the html table
-      // 0 = the first table
+    // get the html table
+    // 0 = the first table
     var table = document.getElementsByTagName('table')[0];
       
-      // add new empty row to the table
-      // 0 = in the top 
-      // table.rows.length = the end
-      // table.rows.length/2+1 = the center
+    // add new empty row to the table
+    // 0 = in the top 
+    // table.rows.length = the end
+    // table.rows.length/2+1 = the center
     var newRow = table.insertRow(table.rows.length/2+1);
       
-      // add cells to the row
+    // add cells to the row
     let cell1 = newRow.insertCell(0);
     let cell2 = newRow.insertCell(1);
     let cell3 = newRow.insertCell(2);
@@ -78,11 +81,56 @@ form.addEventListener('submit', (e) => {
     let cell5 = newRow.insertCell(4);
     let cell6 = newRow.insertCell(5);
       
-      // add values to the cells
+    // add values to the cells
     cell1.innerHTML = firstName_value;
     cell2.innerHTML = lastName_value;
     cell3.innerHTML = address_value;
     cell4.innerHTML = date_value;
     cell5.innerHTML = gender_value;
     cell6.innerHTML = notes_value;
+
+    //Edit the data
+    function onEdit(td) {
+       selectedRow = td.parentElement.parentElement;
+       document.getElementById("productCode").value = selectedRow.cells[0].innerHTML;
+       document.getElementById("product").value = selectedRow.cells[1].innerHTML;
+       document.getElementById("qty").value = selectedRow.cells[2].innerHTML;
+       document.getElementById("perPrice").value = selectedRow.cells[3].innerHTML;
+    }
+    function updateRecord(formData) {
+       selectedRow.cells[0].innerHTML = formData.productCode;
+       selectedRow.cells[1].innerHTML = formData.product;
+       selectedRow.cells[2].innerHTML = formData.qty;
+       selectedRow.cells[3].innerHTML = formData.perPrice;
+    }
+
+     //Delete the data
+    function onDelete(td) {
+      if (confirm('Do you want to delete this record?')) {
+        row = td.parentElement.parentElement;
+        document.getElementById('storeList').deleteRow(row.rowIndex);
+        resetForm();
+      }
+    }
+
+
+    
+
+// // This section saves data in local storage.
+
+//     // Set values
+//     localStorage.setItem("firstName_value", firstName_value);
+//     localStorage.setItem("lastName_value", lastName_value);
+//     localStorage.setItem("address_value", address_value);
+//     localStorage.setItem("date_value", date_value);
+//     localStorage.setItem("gender_value", gender_value);
+//     localStorage.setItem("notes_value", notes_value);
+
+//     // Get values
+//     localStorage.getItem("firstName_value", firstName_value);
+//     localStorage.getItem("lastName_value", lastName_value);
+//     localStorage.getItem("address_value", address_value);
+//     localStorage.getItem("date_value", date_value);
+//     localStorage.getItem("gender_value", gender_value);
+//     localStorage.getItem("notes_value", notes_value);
 });
