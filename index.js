@@ -20,8 +20,10 @@ let formValidation = () =>{
   if(fName.value === "" || fName.value === null || !fName.value.match(textOnly)){
     error_fName.innerHTML = "First Name is required,Digits and special characters are not allowed!";
   }else if(lName.value === "" || lName.value === null || !lName.value.match(textOnly)){
+    error_fName.innerHTML = "";
     error_lName.innerHTML = "Last Name is required,Digits and special characters are not allowed!";
   }else if(address.value === "" || address.value === null){
+    error_lName.innerHTML = "";
     error_address.innerHTML = "Address must be less than 35 characters!";
   }
   else{
@@ -58,7 +60,7 @@ let createPost = () => {
       <td>${x.address}</td>
       <td>${x.date}</td>
       <td>${x.gender}</td>
-      <td>${x.textarea}</span>
+      <td>${x.textarea}</td>
       <td class="btn btn-danger" onClick="deletePost(this);createPost()">Delete</td>
     </div>
   `);
