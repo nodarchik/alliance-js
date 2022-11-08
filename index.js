@@ -55,7 +55,7 @@ let createPost = () => {
     return (table.innerHTML += `
     <tbody id=${y}>
       <tr>
-        <td scope="row">${y}</td>
+        <td scope="row">${y+1}</td>
         <td>${x.fName}</td>
         <td>${x.lName}</td>
         <td>${x.address}</td>
