@@ -62,7 +62,7 @@ let createPost = () => {
         <td scope="col">${x.date}</td>
         <td scope="col">${x.gender}</td>
         <td scope="col">${x.textarea}</td>
-        <td id="btnsize" type="button" class="btn btn-danger active" onClick="deletePost(this);createPost()">Delete</td>
+        <td id="btnsize" type="button" class="btn btn-danger active m-1" onClick="deletePost(this);createPost()">Delete</td>
       </tr>
     </tbody>
   `);
