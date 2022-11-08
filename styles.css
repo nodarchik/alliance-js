@@ -22,7 +22,6 @@ body{
     }
     #no-more-tables td {
         position: relative;
-        padding-left: 50%;
         border: none;
         border-bottom: 1px solid #eee;
     }
