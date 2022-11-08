@@ -10,35 +10,39 @@
 </head>
 <body>
     <form id="form" class="container p-5 w-50 mx-auto">
-        <div>
-            <input class="form-control" id="firstName" type="text" placeholder="First Name">
-            <span id="error_firstName"></span>
+        <div class="row">
+            <div class="col-md-6 mb-3">
+                <label for="firstName">First name</label>
+                <input class="form-control" id="firstName" type="text" placeholder="First Name">
+                <span id="error_firstName"></span>
+            </div>
+            <div class="col-md-6 mb-3">
+                <label for="lastName">Last name</label>
+                <input class="form-control" id="lastName" type="text" placeholder="Last Name">
+                <span id="error_lastName"></span>
+            </div>
         </div>
-        <div>
-            <input class="form-control" id="lastName" type="text" placeholder="Last Name">
-            <span id="error_lastName"></span>
-        </div>
-        <div>
+        <div class="mb-3">
             <input class="form-control" id="address" type="text" placeholder="Address">
             <span id="error_address"></span>
         </div>
-        <div>
+        <div class="mb-3">
             <input class="form-control" id="date" type="date" placeholder="Date of Birth">
         </div>
-        <div>
+        <div class="mb-3">
             <select class="form-control" id="gender" name="gender">
                 <option value="male">Male</option>
                 <option value="female">Female</option>
             </select>
         </div>
-        <div>
+        <div class="mb-3">
             <textarea class="form-control" name="" id="notes" cols="30" rows="10" placeholder="Notes"></textarea>
         </div>
         <div>
             <button class="btn btn-primary" type="submit">Submit</button>
         </div>
     </form>
-    <div id="modal"></div>
+    
     <table class="table w-25 mx-auto">
         <thead>
             <tr>
