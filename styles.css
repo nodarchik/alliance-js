@@ -2,6 +2,13 @@ body{
     height: 100vh;
     background:rgb(100, 100, 100)
 }
+.grid{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+}
+#btnsize{
+    height: fit-content;
+}
 @media only screen and (max-width:800px) {
     #no-more-tables tbody,
     #no-more-tables tr,
@@ -15,9 +22,9 @@ body{
     }
     #no-more-tables td {
         position: relative;
+        padding-left: 50%;
         border: none;
         border-bottom: 1px solid #eee;
-        width: 100%;
     }
     #no-more-tables td:before {
         content: attr(data-title);

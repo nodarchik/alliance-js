@@ -54,15 +54,15 @@ let createPost = () => {
   data.map((x,y) =>{
     return (table.innerHTML += `
     <tbody id=${y}>
-      <tr>
-        <td scope="row">${y+1}</td>
-        <td>${x.fName}</td>
-        <td>${x.lName}</td>
-        <td>${x.address}</td>
-        <td>${x.date}</td>
-        <td>${x.gender}</td>
-        <td>${x.textarea}</td>
-        <td type="button" class="btn btn-danger active" onClick="deletePost(this);createPost()">Delete</td>
+      <tr class="grid">
+        <td scope="col">${y+1}</td>
+        <td scope="col">${x.fName}</td>
+        <td scope="col">${x.lName}</td>
+        <td scope="col">${x.address}</td>
+        <td scope="col">${x.date}</td>
+        <td scope="col">${x.gender}</td>
+        <td scope="col">${x.textarea}</td>
+        <td id="btnsize" type="button" class="btn btn-danger active" onClick="deletePost(this);createPost()">Delete</td>
       </tr>
     </tbody>
   `);
