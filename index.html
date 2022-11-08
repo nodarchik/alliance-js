@@ -9,7 +9,7 @@
     <title>Alliance</title>
 </head>
 <body>
-    <form id="form" class="container p-5 w-50 mx-auto">
+    <form id="form" class="container w-50 mx-auto">
         <div class="row">
             <div class="col-md-6 mb-3">
                 <label for="firstName">First name</label>
@@ -23,41 +23,49 @@
             </div>
         </div>
         <div class="mb-3">
+            <label for="address">Address</label>
             <input class="form-control" id="address" type="text" placeholder="Address">
             <span id="error_address"></span>
         </div>
         <div class="mb-3">
+            <label for="date">Date of Birth</label>
             <input class="form-control" id="date" type="date" placeholder="Date of Birth">
         </div>
         <div class="mb-3">
+            <label for="gender">Gender</label>
             <select class="form-control" id="gender" name="gender">
                 <option value="male">Male</option>
                 <option value="female">Female</option>
             </select>
         </div>
         <div class="mb-3">
-            <textarea class="form-control" name="" id="notes" cols="30" rows="10" placeholder="Notes"></textarea>
+            <label for="notes">Notes</label>
+            <textarea class="form-control" name="" id="notes" cols="10" rows="3" placeholder="Notes"></textarea>
         </div>
         <div>
             <button class="btn btn-primary" type="submit">Submit</button>
         </div>
     </form>
-    
-    <table class="table w-25 mx-auto">
-        <thead>
-            <tr>
-            <th scope="col">#</th>
-            <th scope="col">First Name</th>
-            <th scope="col">Last Name</th>
-            <th scope="col">Address</th>
-            <th scope="col">Date</th>
-            <th scope="col">Gender</th>
-            <th scope="col">notes</th> 
-            <th scope="col">delete</th>
-            </tr> 
-        </thead>
-        <table id="table"  class="table w-25 mx-auto"></table>
-    </table>    
+<section class="p-5">
+    <div class="table-responsive" id="no-more-tables">
+        <table id="tablehead" class="table w-25 mx-auto">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">First Name</th>
+                    <th scope="col">Last Name</th>
+                    <th scope="col">Address</th>
+                    <th scope="col">Date</th>
+                    <th scope="col">Gender</th>
+                    <th scope="col">notes</th> 
+                    <th scope="col">delete</th>
+                </tr> 
+            </thead>
+        </table>    
+        <table id="table"  class="table w-25 mx-auto">
+        </table>
+   </div>
+</section>
 <script src="index.js"></script>
 </body>
 </html>
