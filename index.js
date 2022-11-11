@@ -80,8 +80,8 @@ let resetForm = () => {
 };
 
 let deletePost = (e) => {
-  e.parentElement.remove();
-  data.splice(e.parentElement.id, 1);
+  e.parentElement.parentElement.remove();
+  data.splice(e.parentElement.parentElement.id, 1);
   localStorage.setItem("data", JSON.stringify(data));
 };
 
