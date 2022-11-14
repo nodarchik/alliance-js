@@ -1,1 +1,1 @@
-# alliance-js
+https://nodarchik.github.io/alliance-js/
