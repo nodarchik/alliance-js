@@ -65,47 +65,28 @@ let createPost = () => {
         <td scope="col">${x.gender}</td>
 
         <div>
-          <div class="modal fade" id="modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal fade" id="modal_${y}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog">
               <div class="modal-content">
                 <div class="modal-header">
                   <div>Notes</div>
                   <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-              <div class="modal-body">            
-                <div scope="col">${x.textarea}</div>             
+              <div class="modal-body">
+                <div scope="col">${x.textarea}</div>
               </div>
             </div>
           </div>
         </div>
 
-        <td scope="col" data-bs-toggle="modal" data-bs-target="#modal">Click to see</td>
-        <td id="btnsize" type="button" class="btn btn-danger active m-1" onClick="deletePost(this);createPost()">Delete</td>
+        <td scope="col" data-bs-toggle="modal" data-bs-target="#modal_${y}">Click to see</td>
+        <td id="btnsize" type="button" class="btn btn-danger active m-1" onClick="deletePost(this);createPost()">Delete</td>*
       </tr>
     </tbody>
   `);
   });
   resetForm();
 };
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 let resetForm = () => {
   fName.value = "";
