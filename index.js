@@ -80,7 +80,7 @@ let createPost = () => {
         </div>
 
         <td scope="col" data-bs-toggle="modal" data-bs-target="#modal_${y}">Click to see</td>
-        <td id="btnsize" type="button" class="btn btn-danger active m-1" onClick="deletePost(this);createPost()">Delete</td>*
+        <td id="btnsize" type="button" class="btn btn-danger active m-1" onClick="deletePost(this);createPost()">Delete</td>
       </tr>
     </tbody>
   `);
