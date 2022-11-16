@@ -35,3 +35,7 @@ body{
         border-bottom: 1px solid #ccc;
     }
 }
+#addNew {
+  height: fit-content;
+  width: fit-content;
+}

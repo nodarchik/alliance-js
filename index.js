@@ -11,6 +11,8 @@ let error_address = document.getElementById("error_address");
 let table = document.getElementById("table");
 const textOnly = /^[a-zA-Z]+$/;
 
+console.log(localStorage);
+
 form.addEventListener("submit", (e) => {
   e.preventDefault();
   formValidation();
@@ -43,7 +45,7 @@ let acceptData = () => {
     address: address.value,
     date: date.value,
     gender: gender.value,
-    textarea: textarea.value,
+    textarea:textarea.value,
   });
   localStorage.setItem("data", JSON.stringify(data));
   createPost();
@@ -61,7 +63,23 @@ let createPost = () => {
         <td scope="col">${x.address}</td>
         <td scope="col">${x.date}</td>
         <td scope="col">${x.gender}</td>
-        <td scope="col">${x.textarea}</td>
+
+        <div>
+          <div class="modal fade" id="modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <div>Notes</div>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+              <div class="modal-body">            
+                <div scope="col">${x.textarea}</div>             
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <td scope="col" data-bs-toggle="modal" data-bs-target="#modal">Click to see</td>
         <td id="btnsize" type="button" class="btn btn-danger active m-1" onClick="deletePost(this);createPost()">Delete</td>
       </tr>
     </tbody>
@@ -69,6 +87,25 @@ let createPost = () => {
   });
   resetForm();
 };
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 let resetForm = () => {
   fName.value = "";
